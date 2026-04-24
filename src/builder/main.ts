@@ -1,7 +1,13 @@
+import { DocumentBuilder } from "./DocumentBuilder";
+
 const header = "ACME Corporation — Report";
 const body = "Quarterly performance increased by 12%.";
 const footer = "--- Confidential ---";
 
-const myDocument = header + "\\n\\n" + body + "\\n\\n" + footer;
+const output = new DocumentBuilder()
+  .addBody(body)
+  .addFooter(footer)
+  .addHeader(header)
+  .build();
 
-console.log(myDocument);
+console.log(output);
